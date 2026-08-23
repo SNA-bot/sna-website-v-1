@@ -7,7 +7,6 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    // [Wire this up to Supabase or an email service once ready.]
     setSent(true)
   }
 
@@ -25,8 +24,16 @@ export default function Contact() {
           <h2 className="mt-2 font-display text-2xl text-indigo-900">{SCHOOL.name}</h2>
           <ul className="mt-6 space-y-3 text-sm text-indigo-950/75">
             <li><span className="font-mono text-xs uppercase text-brass-600">Address </span><br />{SCHOOL.location}</li>
-            <li><span className="font-mono text-xs uppercase text-brass-600">Phone </span><br />{SCHOOL.phone}</li>
-            <li><span className="font-mono text-xs uppercase text-brass-600">Email </span><br />{SCHOOL.email}</li>
+            <li>
+              <span className="font-mono text-xs uppercase text-brass-600">Phone </span><br />
+              {SCHOOL.phones.map((phone, i) => (
+                <span key={phone}>
+                  <a href={`tel:${phone.replace(/\s/g, '')}`} className="hover:text-brass-600">{phone}</a>
+                  {i < SCHOOL.phones.length - 1 && ' · '}
+                </span>
+              ))}
+            </li>
+            <li><span className="font-mono text-xs uppercase text-brass-600">Email </span><br /><a href={`mailto:${SCHOOL.email}`} className="hover:text-brass-600">{SCHOOL.email}</a></li>
           </ul>
         </div>
 
