@@ -13,7 +13,8 @@ export const SCHOOL = {
   name: 'Sealed Nectar Academy',
   shortName: 'SNA',
   tagline: 'Despite All Odds, Guided by Faith and Driven by Success',
+  motto: 'Education in Service to Allah through Humanity',
   location: 'Ota, Ogun State, Nigeria',
-  phone: '+234 000 000 0000',
+  phones: ['+234 806 525 7209', '+234 906 909 1255'],
   email: 'info@sealednectaracademy.edu.ng',
 }

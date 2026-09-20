@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { NAV_LINKS, SCHOOL } from '../siteData'
+import logo from '../logo.png'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -9,9 +10,11 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-indigo-900 text-ivory shadow-lg shadow-indigo-950/20">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <NavLink to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-brass-500 font-display text-lg font-semibold text-brass-400">
-            SN
-          </span>
+          <img
+            src={logo}
+            alt={`${SCHOOL.name} logo`}
+            className="h-11 w-11 rounded-full bg-white object-contain p-0.5"
+          />
           <span className="font-display text-lg leading-tight">
             {SCHOOL.shortName}
             <span className="block font-mono text-[10px] tracking-[0.15em] text-brass-400">ACADEMY</span>

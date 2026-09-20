@@ -27,6 +27,19 @@
   }
 }
 
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  animation: ticker-scroll 28s linear infinite;
+}
+
 @layer components {
   .eyebrow {
     @apply font-mono text-xs tracking-[0.2em] uppercase text-brass-600;
